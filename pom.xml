@@ -69,10 +69,11 @@
 			<artifactId>spring-data-rest-core</artifactId>
 			<version>3.3.1.RELEASE</version>
 		</dependency>
+
 		<dependency>
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
-			<version>1.2.1</version> <!-- makesure correct version here -->
+			<version>1.4</version> <!-- makesure correct version here -->
 		</dependency>
 	</dependencies>
 
