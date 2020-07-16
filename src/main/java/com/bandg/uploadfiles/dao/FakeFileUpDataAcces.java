@@ -14,14 +14,14 @@ import java.util.UUID;
 public class FakeFileUpDataAcces implements FileUpDao{
     private  final List<FileUp> files = new ArrayList<>();
     @Override
-    public int insertFile(UUID id, FileUp file) {
+    public UUID insertFile(UUID id, FileUp file) {
        FileUp fileUp = new FileUp(id,
                file.getFileName(),
                file.getPath(),
                file.getSize(),
                file.getOwnerName());
        files.add(fileUp);
-        return 1;
+        return fileUp.getId();
     }
     @Override
     public UUID insertFile(FileUp file) {

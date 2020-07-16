@@ -3,6 +3,7 @@ package com.bandg.uploadfiles.service;
 import com.bandg.uploadfiles.dao.FileUpDao;
 import com.bandg.uploadfiles.models.FileUp;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
@@ -13,11 +14,11 @@ public class FileUpService {
     private final FileUpDao fileUpDao;
 
     @Autowired
-    public FileUpService(FileUpDao fileUpDao) {
+    public FileUpService(@Qualifier("postgres") FileUpDao fileUpDao) {
         this.fileUpDao = fileUpDao;
     }
 
-    public int insertFile(UUID id, FileUp file) {
+    public UUID insertFile(UUID id, FileUp file) {
 
         return fileUpDao.insertFile(id,file);
     }

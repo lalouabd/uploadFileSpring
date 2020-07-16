@@ -5,7 +5,7 @@ import com.bandg.uploadfiles.models.FileUp;
 import java.util.UUID;
 
 public interface FileUpDao {
-    int insertFile(UUID id, FileUp file);
+    UUID insertFile(UUID id, FileUp file);
     UUID insertFile(FileUp file);
 
     int delFileById(UUID id);

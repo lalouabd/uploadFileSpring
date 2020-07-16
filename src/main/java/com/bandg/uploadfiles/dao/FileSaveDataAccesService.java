@@ -58,8 +58,9 @@ public class FileSaveDataAccesService  implements  FileSaveDao
 
     @Override
     public FileUp getFileInfo(UUID id) {
-
-        return fileUpDao.getFileByID(id);
+        FileUp file = fileUpDao.getFileByID(id);
+        System.out.println(file);
+        return file;
     }
 
     @Override

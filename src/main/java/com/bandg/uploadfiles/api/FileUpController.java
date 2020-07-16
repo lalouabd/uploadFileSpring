@@ -1,33 +1,29 @@
 package com.bandg.uploadfiles.api;
 
-import com.bandg.uploadfiles.models.FileSaveService;
+import com.bandg.uploadfiles.service.FileSaveService;
 import com.bandg.uploadfiles.models.FileUp;
-import com.bandg.uploadfiles.service.FileUpService;
-import com.sun.istack.internal.NotNull;
-import jdk.internal.org.objectweb.asm.TypeReference;
+
 import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.web.servlet.MultipartProperties;
-import org.springframework.boot.jackson.JsonObjectDeserializer;
 import org.springframework.context.annotation.Bean;
-import org.springframework.data.repository.query.Param;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
+import org.springframework.http.MediaTypeFactory;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.annotation.PostConstruct;
 import javax.servlet.MultipartConfigElement;
-import javax.websocket.server.PathParam;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.UUID;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -64,25 +60,27 @@ public class FileUpController {
     }
     @RequestMapping(
 
-            method = RequestMethod.POST,
-            produces = MediaType.APPLICATION_JSON_VALUE
+            method = RequestMethod.POST
     )
-    public @ResponseBody String handleFileUpload(@RequestParam(value= "file") MultipartFile file) {
+    public ResponseEntity<JSONObject>  handleFileUpload(@RequestParam(value= "file") MultipartFile file) {
         UUID id = null;
         try {
 
             id =  fileUpService.store(file);
-
+            System.out.println(id);
         }
         catch (Exception e)
         {
             e.printStackTrace();
         }
-//        redirectAttributes.addFlashAttribute("message",
-//                "You successfully uploaded " + id  + "!");
+
         JSONObject  res  = new JSONObject();
         res.put("id" , id.toString());
-        return res.toString();
+        //Access-Control-Allow-Origin:
+
+        return ResponseEntity.ok()
+                .header(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN)
+                .contentType(MediaType.APPLICATION_JSON).body(res);
     }
 
     @RequestMapping(
@@ -90,16 +88,38 @@ public class FileUpController {
             produces = MediaType.APPLICATION_JSON_VALUE,
             path = "{fileId}"
     )
-
     public @ResponseBody FileUp getFileDetails(@PathVariable("fileId") UUID id)
     {
         return fileUpService.getFileDetails(id);
     }
-    
-//    public MultipartFile getFile(UUID id)
-//    {
-//
-//    }
+    @RequestMapping(
+            path = "/get/{id}",
+            method = RequestMethod.GET
+    )
+    public ResponseEntity<ByteArrayResource> downloadFile(@PathVariable("id") UUID id)  {
+
+        String filename  = fileUpService.getFileDetails(id).getFileName();
+        MediaType mediaType = MediaTypeFactory.getMediaType( filename).get();
+
+
+        Path path = Paths.get(fileUpService.getFileDetails(id).getPath());
+        try {
+            byte[] data = Files.readAllBytes(path);
+            ByteArrayResource resource = new ByteArrayResource(data);
+
+            return ResponseEntity.ok()
+                    // Content-Disposition
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + path.getFileName().toString())
+                    // Content-Type
+                    .contentType(mediaType) //
+                    // Content-Lengh
+                    .contentLength(data.length) //
+                    .body(resource);
+        }catch (Exception e)
+        {
+            return null;
+        }
+    }
 //
     
     

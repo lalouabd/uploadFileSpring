@@ -1,6 +1,7 @@
-package com.bandg.uploadfiles.models;
+package com.bandg.uploadfiles.service;
 
 import com.bandg.uploadfiles.dao.FileSaveDao;
+import com.bandg.uploadfiles.models.FileUp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,7 @@ public class FileSaveService {
     }
 
     public FileUp getFileDetails(UUID id) {
+
         return  fileSaveDao.getFileInfo(id);
     }
 }
