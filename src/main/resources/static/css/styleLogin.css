@@ -1,0 +1,101 @@
+body {
+    background-color: #D4D1D1;
+    text-align: center;
+}
+.login {
+    height: 400px;
+    width: 500px;
+    background: linear-gradient(0.25turn, #4B79A1, #283E51);
+    margin-top: 10%;
+    margin-left: 37%;
+    position: absolute;
+    box-shadow: 2px 2px 4px gray;
+    color: #D4D1D1;
+    letter-spacing: 2px;
+}
+#username ,#password {
+    margin-top: 20px;
+    margin-left: 130px;  
+    
+}
+
+table tr td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+label {
+    margin-left: -140px;
+    font-size: 20px;
+    font: bold;
+}
+.btnLogin{
+    margin-top: 100px;
+    border: none;
+    padding: 13px 60px;
+    background-color: #D4D1D1;
+    font-size: 20px;
+    color: #477399;
+    box-shadow: 1px 1px 4px gray;
+    border-radius: 5%;
+}
+
+#Register {
+    color: #D4D1D1;
+    margin-left: 55px;
+    margin-top: 10px;
+    position: absolute;
+}
+#Register:hover {
+    color: skyblue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.btnLogin:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+.registerPnl {
+    height: 400px;
+    width: 600px;
+    box-shadow: 2px 2px 4px gray;
+    background: linear-gradient(0.25turn, #4B79A1, #283E51);
+    margin-top: 10%;
+    margin-left: 35%;
+    position: absolute;
+    display: none;
+    color: #D4D1D1;
+}
+#registerfrm {
+    margin-top: 5%;
+    margin-left: -75px;
+}
+#btnregister {
+    position: absolute;
+    margin-left: -280px;
+}
+#passwordrgstr {
+    margin-left: 250px;
+    margin-top: 20px;
+}
+#mail , #name {
+    margin-left: -100px;
+}
+
+#image {
+    margin-top: 20px;
+    margin-left: 150px;
+}
+
+#loginback {
+    position: absolute;
+    margin-left: -200px;
+    margin-top: 170px;
+    color: #D4D1D1;
+}
+#loginback:hover {
+    color: skyblue;
+    text-decoration: underline;
+    cursor: pointer;
+}

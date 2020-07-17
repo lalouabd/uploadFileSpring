@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+        <meta content="utf-8" http-equiv="encoding"/>
+        <link rel='stylesheet' type='text/css' href="styleLogin.css" />
+        <script src="jquery-3.5.1.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="login">
+            <h1 class="titleLogin">Login</h1>
+            <table>
+                <tr>
+                    <td><input type="text" id="username" placeholder="username" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="password" placeholder="password" /></td>
+                </tr>
+            </table>
+            <a id="Register">Register</a>
+            <button class="btnLogin">Login</button>
+        </div>
+        <div class="registerPnl">
+            <h1 class="titleLogin">Register</h1>
+            <form id="registerfrm">
+                <table>
+                    <tr>
+                        <td><input type="email" id="mail" placeholder="Email"/></td>
+                        <td><input type="text" id="name" placeholder="Name" /></td>
+                    </tr>
+                    <tr>
+                        <td id="pass"><input type="password" id="passwordrgstr" placeholder="Password" />
+                            <input type="checkbox" id="showpass" /></td>
+                    </tr>
+                </table>
+                <input type="file" id="image" />
+                <button class="btnLogin" id="btnregister">Register</button>
+                <a id="loginback">Login...</a>
+            </form>
+        </div>
+    </body>
+    <script src="mainJS.js"></script>
+    <script src="requests.js"></script>
+    <script>function click(){alert()}</script>
+</html>

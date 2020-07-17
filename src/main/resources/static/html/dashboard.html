@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+        <meta content="utf-8" http-equiv="encoding"/>
+        <link rel='stylesheet' type='text/css' href="style.css" />
+        <script src="jquery-3.5.1.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="navbar">
+            <div id="selectorh"></div>
+            <div id="separator"></div>
+            <button class="btn" id="h"><i class="fa fa-home" style="margin-right: 5px"></i>Home</button>
+            <button class="btn" id="m"><i class="fa fa-cloud" style="margin-right: 5px"></i>My Surveys</button>
+            <button class="btn" id="c"><i class="fa fa-plus" style="margin-right: 5px"></i>Create Survey</button>
+            <div id="profil"><div id="profile"></div></div>
+            <div id="drop">
+                <div id="triangle"></div>
+                <div id="dropMenu">
+                    <table>
+                        <tr>
+                            <td><button class="logout">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="logout">Log out</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="cont" id="container" style="text-align: center;">
+            <h1 id="titleContainer" style="color:#D4D1D1" >File Upload</h1>
+            <input type="file" id="fileUpload" style="color:#D4D1D1" /><br></br>
+            <div class="progress-bar" id="progressBar">
+                <div class="progress-bar-fill">
+                    <span class="progress-bar-text">0%</span>
+                </div>
+            </div>
+            <p id="error" style="color: white;"></p>
+        <div id="inputSubmit"  ><i class="fa fa-plus"></i><input type="submit" id="submit" class="btn" style="color:#D4D1D1" /></div>
+        </div>
+        <div class="cont" id="container1" style="text-align: center;"></div>
+    </body>
+    <script src="mainJS.js"></script>
+    <script src="requests.js"></script>
+    <script>function click(){alert()}</script>
+</html>

@@ -1,0 +1,155 @@
+#navbar {
+    position: absolute;
+    position: sticky;
+    height: 80px;
+    width: 100%;
+    background: linear-gradient(0.25turn, #4B79A1, #283E51);
+    top: 0;
+    text-align: left;
+    margin-left: 0;
+    box-shadow: 2px 2px 4px gray;
+}
+
+body {
+    background-color: rgb(212, 209, 209);
+}
+
+.btn {
+    background-color: transparent;
+    padding: 15px 32px;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    
+    margin-left: 20px;
+    margin-top: 11px;
+}
+.btn:hover {
+    color: rgb(212, 209, 209);
+    cursor: pointer;
+}
+.btn:active {
+    color: rgb(146, 143, 143);
+}
+.cont {
+    background-color: #3B5E7D;
+    box-shadow: 1px 1px 2px gray;
+    height: max-content;
+    width: 25%;
+    margin-top: 5%;
+    margin-left: 35%;
+    display: none;
+}
+#selectorh {
+    height: 5px;
+    width: 100px;
+    background-color: rgb(212, 209, 209);
+    position: absolute;
+    margin-top: 74px;
+    margin-left: 38px;
+}
+
+#titleContainer {
+    color: white;
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#submit {
+    margin-left: -20;
+    margin-top: 80px;
+}
+
+#separator {
+    background-color: gray;
+    opacity: 0.7;
+    height: 60px;
+    width: 1px;
+    position: absolute;
+    left: 1830px;
+    top: 10px;
+}
+
+#fileUpload {
+    color: #D4D1D1;
+    margin-left: 50px;
+}
+#inputSubmit {
+    color: #D4D1D1;
+}
+
+#profile {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    background-color: white;
+    margin-left: 1850;
+    border-radius: 50%;
+    top: 15px;
+}
+
+#more {
+    margin-left: 1760;
+    font-size: large;
+    position: absolute;
+    top: 27px;
+    color: white;
+}
+
+#profile {
+    position: absolute;
+}
+#triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    position: absolute;
+    border-bottom: 18px solid white;
+    margin-left: 1865;
+    display: none;
+}
+#dropMenu {
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    background-color: white;
+    box-shadow: 2px 2px 4px gray;
+    border-radius: 2%;
+    margin-left: 1750;
+    margin-top: 16px;
+    text-align: center;
+    display: none;
+}
+
+.logout{
+    font-size: 15px;
+    margin-left: 35px;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    height: 35px;
+    width: 250px;
+    border: 2px solid black;
+    border-radius: 1%;
+    margin-left: 110px;
+    display: none;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: gray;
+    align-items: center;
+    opacity: 0.5;
+    font-weight: bold;
+    transition: width 0.25s;
+}
+
+.progress-bar-text  {
+    margin-top: 20px;
+    margin-left: 10px;
+    font-weight: bold;
+}
