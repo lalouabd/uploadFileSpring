@@ -2,11 +2,12 @@
     <head>
         <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
         <meta content="utf-8" http-equiv="encoding"/>
-        <link rel='stylesheet' type='text/css' href="styleLogin.css" />
-        <script src="jquery-3.5.1.min.js"></script>
+        <link rel='stylesheet' type='text/css' href="../css/styleLogin.css" />
+        <script src="../js/jquery-3.5.1.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></link>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
@@ -32,8 +33,13 @@
                         <td><input type="text" id="name" placeholder="Name" /></td>
                     </tr>
                     <tr>
-                        <td id="pass"><input type="password" id="passwordrgstr" placeholder="Password" />
-                            <input type="checkbox" id="showpass" /></td>
+                        <td id="pass"><input type="password" id="passwordrgstr" placeholder="Password" /> <span class="material-icons" id="showpass">
+                            visibility
+                            </span>
+                            <span class="material-icons" id="hidepass">
+                                visibility_off
+                                </span>
+                            </td>
                     </tr>
                 </table>
                 <input type="file" id="image" />
@@ -42,7 +48,6 @@
             </form>
         </div>
     </body>
-    <script src="mainJS.js"></script>
-    <script src="requests.js"></script>
-    <script>function click(){alert()}</script>
+    <script src="../js/mainJS.js"></script>
+    <script src="../js/requests.js"></script>
 </html>

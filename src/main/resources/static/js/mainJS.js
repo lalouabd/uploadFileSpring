@@ -66,3 +66,13 @@ $('#loginback').click(function(){
     $('.registerPnl').hide();
     $('.login').show();
 })
+$('#showpass').click(function(){
+    $('#showpass').hide()
+    $('#hidepass').show()
+    $('#passwordrgstr').attr('type','password')
+})
+$('#hidepass').click(function(){
+    $('#showpass').show()
+    $('#hidepass').hide()
+    $('#passwordrgstr').attr('type','text')
+})

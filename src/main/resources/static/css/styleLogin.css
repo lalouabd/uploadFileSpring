@@ -19,16 +19,44 @@ body {
     
 }
 
+#passwordrgstr{
+    display: flex;
+}
+
+
+#showpass {
+    position: absolute;
+    margin-left: 254px;
+    margin-top: -30px;
+    color: #aaa7a7;
+    display: none;
+}
+#showpass:hover {
+    cursor: pointer;
+    color: #999696;
+}
+
+#hidepass {
+    position: absolute;
+    margin-left: 254px;
+    margin-top: -30px;
+    color: #aaa7a7;
+}
+#hidepass:hover{
+    cursor: pointer;
+    color: #999696;
+}
+
 table tr td {
     text-align: center;
     vertical-align: middle;
 }
 
-label {
-    margin-left: -140px;
-    font-size: 20px;
-    font: bold;
+#passwordContainer {
+    background-color: blueviolet;
+    width: max-content;
 }
+
 .btnLogin{
     margin-top: 100px;
     border: none;
@@ -80,7 +108,7 @@ label {
     margin-top: 20px;
 }
 #mail , #name {
-    margin-left: -100px;
+    margin-left: -80px;
 }
 
 #image {
