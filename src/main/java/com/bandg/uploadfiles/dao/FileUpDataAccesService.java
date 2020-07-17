@@ -35,26 +35,32 @@ public class FileUpDataAccesService  implements FileUpDao{
                   "ownerName" +
                   ") values(?,?,?,?,?,?);";
           jdbcTemplate.update(sql,
-                  file.getId(),
-                  file.getFileName(),
-                  file.getPath(),
-                  file.getLink(),
-                  file.getSize(),
-                  file.getOwnerName()
+                  fileUp.getId(),
+                  fileUp.getFileName(),
+                  fileUp.getPath(),
+                  fileUp.getLink(),
+                  fileUp.getSize(),
+                  fileUp.getOwnerName()
           );
+          return id;
       } catch (Exception e)
       {
           e.printStackTrace();
+          return null;
       }
-        return fileUp.getId();
     }
 
     @Override
     public UUID insertFile(FileUp file) {
         UUID id  = UUID.randomUUID();
-        while(getFileByID(id) != null)
-            id = UUID.randomUUID();
-        return this.insertFile(UUID.randomUUID(), file);
+        try {
+            while (getFileByID(id) != null)
+                id = UUID.randomUUID();
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return this.insertFile(id, file);
     }
 
     @Override

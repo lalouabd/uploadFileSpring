@@ -1,4 +1,4 @@
-package com.bandg.uploadfiles;
+package com.bandg.uploadfiles.configuration;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -9,7 +9,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 @Configuration
-public class MyConfiguration {
+public class HTTPConfiguration {
 
     @Bean
     public FilterRegistrationBean corsFilter() {

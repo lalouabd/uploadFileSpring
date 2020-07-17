@@ -4,6 +4,7 @@ import com.bandg.uploadfiles.service.FileSaveService;
 import com.bandg.uploadfiles.models.FileUp;
 
 import net.minidev.json.JSONObject;
+import org.apache.tomcat.util.digester.DocumentProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.web.servlet.MultipartProperties;
@@ -21,6 +22,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import javax.servlet.MultipartConfigElement;
 
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -96,9 +98,11 @@ public class FileUpController {
             path = "/get/{id}",
             method = RequestMethod.GET
     )
-    public ResponseEntity<ByteArrayResource> downloadFile(@PathVariable("id") UUID id)  {
+    public ResponseEntity downloadFile(@PathVariable("id") UUID id)  {
 
-        String filename  = fileUpService.getFileDetails(id).getFileName();
+        FileUp file = fileUpService.getFileDetails(id);
+        if(file != null){
+        String filename  = file.getFileName();
         MediaType mediaType = MediaTypeFactory.getMediaType( filename).get();
 
 
@@ -119,6 +123,13 @@ public class FileUpController {
         {
             return null;
         }
+        }
+        JSONObject js = new JSONObject();
+        js.put("error","File not Found");
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + "error")
+                .contentType(MediaType.valueOf(MediaType.APPLICATION_JSON_VALUE))
+                .body(js);
     }
 //
     
