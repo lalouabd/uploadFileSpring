@@ -22,6 +22,7 @@ var id;
 xhttp = new XMLHttpRequest();
 $('#c').click(function(event){
     $('#container').show("fast")
+    $('#container1').hide("fast")
     $('#selectorh').css('margin-left','430px')
     $('#c').css('color','rgb(212, 209, 209)')
     $('#h').css('color','white')
@@ -29,6 +30,7 @@ $('#c').click(function(event){
 })
 $('#h').click(function(event){
     $('#container').hide("fast")
+    $('#container1').hide("fast")
     $('#selectorh').css('margin-left','38px')
     $('#h').css('color','rgb(212, 209, 209)')
     $('#m').css('color','white')
@@ -36,6 +38,7 @@ $('#h').click(function(event){
 })
 $('#m').click(function(event){
     $('#container').hide("fast")
+    $('#container1').show("fast")
     $('#selectorh').css('margin-left','218px')
     $('#m').css('color','rgb(212, 209, 209)')
     $('#h').css('color','white')
@@ -76,3 +79,5 @@ $('#hidepass').click(function(){
     $('#hidepass').hide()
     $('#passwordrgstr').attr('type','text')
 })
+
+$('.table-container:td').click(copy())

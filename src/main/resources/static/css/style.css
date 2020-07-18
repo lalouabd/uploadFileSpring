@@ -7,7 +7,7 @@
     top: 0;
     text-align: left;
     margin-left: 0;
-    box-shadow: 2px 2px 4px gray;
+    box-shadow: 0px 0px 20px gray;
 }
 
 body {
@@ -33,9 +33,61 @@ body {
 .btn:active {
     color: rgb(146, 143, 143);
 }
+
+.table-container {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    background-color: #ececec;
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.15);
+}
+
+.table-container thead tr {
+    background-color: #4B79A1;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+.table-container td,
+.table-container th {
+    padding: 12px 15px;
+    text-align: left;
+
+}
+
+.table-container tbody tr {
+    border-bottom: 1px solid rgb(187, 187, 187);
+}
+
+.table-container tbody tr:hover {
+    color: #4B79A1;
+    background-color: #eeeeee;
+    box-shadow: 0 0 5px rgb(0, 0, 0, 0.15);
+}
+
+.table-container tbody tr:nth-of-type(even) {
+    background-color: #d4d4d4;
+}
+
+.table-container tbody tr:last-of-type {
+    border-bottom: 2px solid #4B79A1;
+}
+
+#container1 {
+    margin-top: 5%;
+    margin-left: 35%;
+    height: max-content;
+    width: max-content;
+    display: none;
+}
+
 .cont {
     background-color: #3B5E7D;
-    box-shadow: 1px 1px 2px gray;
+    box-shadow: 0px 0px 20px gray;
     height: max-content;
     width: 25%;
     margin-top: 5%;

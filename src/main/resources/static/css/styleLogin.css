@@ -9,7 +9,7 @@ body {
     margin-top: 10%;
     margin-left: 37%;
     position: absolute;
-    box-shadow: 2px 2px 4px gray;
+    box-shadow: 0 0 20px gray;
     color: #D4D1D1;
     letter-spacing: 2px;
 }
@@ -87,7 +87,7 @@ table tr td {
 .registerPnl {
     height: 400px;
     width: 600px;
-    box-shadow: 2px 2px 4px gray;
+    box-shadow: 0 0 20px gray;
     background: linear-gradient(0.25turn, #4B79A1, #283E51);
     margin-top: 10%;
     margin-left: 35%;
