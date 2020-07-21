@@ -60,7 +60,7 @@ public class PersonController {
         js.put("email",per.getEmail());
         js.put("name", per.getName());
         js.put("id", per.getId());
-        js.put("imglink", "https://0a19182aa9f9.ngrok.io/api/files/" + per.getImage());
+        js.put("imglink", " https://c8a1751c94f4.ngrok.io/api/files/" + per.getImage());
         js.put("dob", per.getDob());
 
         return js.toString();
