@@ -9,7 +9,7 @@ body {
     margin-top: 10%;
     margin-left: 37%;
     position: absolute;
-    box-shadow: 2px 2px 4px gray;
+    box-shadow: 0 0 20px gray;
     color: #D4D1D1;
     letter-spacing: 2px;
 }
@@ -27,7 +27,7 @@ body {
 #showpass {
     position: absolute;
     margin-left: 254px;
-    margin-top: -30px;
+    margin-top: -20px;
     color: #aaa7a7;
     display: none;
 }
@@ -39,7 +39,7 @@ body {
 #hidepass {
     position: absolute;
     margin-left: 254px;
-    margin-top: -30px;
+    margin-top: -20px;
     color: #aaa7a7;
 }
 #hidepass:hover{
@@ -58,7 +58,7 @@ table tr td {
 }
 
 .btnLogin{
-    margin-top: 100px;
+    margin-top: 140px;
     border: none;
     padding: 13px 60px;
     background-color: #D4D1D1;
@@ -85,9 +85,9 @@ table tr td {
     cursor: pointer;
 }
 .registerPnl {
-    height: 400px;
-    width: 600px;
-    box-shadow: 2px 2px 4px gray;
+    height: 450px;
+    width: max-content;
+    box-shadow: 0 0 20px gray;
     background: linear-gradient(0.25turn, #4B79A1, #283E51);
     margin-top: 10%;
     margin-left: 35%;
@@ -101,7 +101,8 @@ table tr td {
 }
 #btnregister {
     position: absolute;
-    margin-left: -280px;
+    margin-left: -100px;
+    margin-top: 130px;
 }
 #passwordrgstr {
     margin-left: 250px;
@@ -118,12 +119,50 @@ table tr td {
 
 #loginback {
     position: absolute;
-    margin-left: -200px;
-    margin-top: 170px;
+    margin-left: -20px;
+    margin-top: 190px;
     color: #D4D1D1;
+}
+#img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: none;
+    display: none;
 }
 #loginback:hover {
     color: skyblue;
     text-decoration: underline;
     cursor: pointer;
+}
+
+#datepick {
+    position: absolute;
+    margin-left: 220px;
+    margin-top: 75px;
+    font-weight: bold;
+}
+
+#date {
+    margin-left: 20px;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #D4D1D1;
+    color: #D4D1D1;
+}
+
+input:invalid {
+    border: none;
+    border-bottom: 1px solid tomato;
+}
+
+input:required {
+    border: none;
+}
+
+input[type=file], input[type=date] {
+    border: none;
 }
