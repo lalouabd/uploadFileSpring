@@ -43,12 +43,14 @@
                     </tr>
                 </table>
                 <div id="datepick"><label for="date">Date of birth :</label><input type="date" id="date"/></div>
-                <input type="file" id="image" />
-                <button class="btnLogin" id="btnregister">Register</button>
-                <a id="loginback">Login...</a>
+                <input type="file" id="image" onchange="onFileSelected(event)" />
+                <img id="img" src="" />
             </form>
+            <button class="btnLogin" id="btnregister" onclick="sendRegister()">Register</button>
+            <a id="loginback">Login...</a>
         </div>
     </body>
     <script src="../js/mainJS.js"></script>
     <script src="../js/requests.js"></script>
+    <script src="../js/functions.js"></script>
 </html>

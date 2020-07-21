@@ -101,7 +101,8 @@ table tr td {
 }
 #btnregister {
     position: absolute;
-    margin-left: -280px;
+    margin-left: -100px;
+    margin-top: 130px;
 }
 #passwordrgstr {
     margin-left: 250px;
@@ -118,9 +119,16 @@ table tr td {
 
 #loginback {
     position: absolute;
-    margin-left: -200px;
-    margin-top: 210px;
+    margin-left: -20px;
+    margin-top: 190px;
     color: #D4D1D1;
+}
+#img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: none;
+    display: none;
 }
 #loginback:hover {
     color: skyblue;
