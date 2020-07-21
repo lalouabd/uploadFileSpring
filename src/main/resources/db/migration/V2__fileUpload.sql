@@ -4,6 +4,6 @@ CREATE TABLE Person(
     email varchar(200) NOT NULL PRIMARY KEY,
      dob DATE NOT NULL,
      password varchar(300) NOT NULL,
-     image_path varchar(300) NOT NULL
+     image varchar(100000) NOT NULL
 
 );

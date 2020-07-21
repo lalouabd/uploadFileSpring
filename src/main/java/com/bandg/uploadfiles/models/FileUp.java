@@ -21,11 +21,11 @@ public class FileUp {
 
 
     public FileUp(
-            @JsonProperty("id") UUID id,
-            @JsonProperty("name") String fileName,
-            @JsonProperty("path") String path,
-            @JsonProperty("size") double size,
-            @JsonProperty("owner") String ownerName) {
+             UUID id,
+             String fileName,
+            String path,
+            double size,
+             String ownerName) {
         this.id = id;
         this.fileName = fileName;
         this.path = path;
@@ -50,7 +50,7 @@ public class FileUp {
         this.link = link;
     }
     public String genrateLink() {
-        return "http://2dd0393492c7.ngrok.io/api/files/get/" + this.id;
+        return "http://2e2e6f1e5a59.ngrok.io/api/files/get/" + this.id;
     }
 
     public UUID getId() {

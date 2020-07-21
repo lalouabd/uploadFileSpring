@@ -2,10 +2,12 @@ package com.bandg.uploadfiles.configuration;
 
 import com.bandg.uploadfiles.jwt.JwtTokenVerifier;
 import com.bandg.uploadfiles.jwt.JwtUsernameAndPasswordAuthenticationFilter;
+import com.bandg.uploadfiles.jwt.PersonAuthenticationManager;
 import com.bandg.uploadfiles.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -25,16 +27,19 @@ public class ApplicationSecurityConfig  extends WebSecurityConfigurerAdapter {
     private final PersonService personService;
     private final SecretKey secretKey;
     private final JwtConfig jwtConfig;
+    private  final PersonAuthenticationManager authenticationManager;
 
     @Autowired
     public ApplicationSecurityConfig(PasswordEncoder passwordEncoder,
                                      PersonService personService,
                                      SecretKey secretKey,
-                                     JwtConfig jwtConfig) {
+                                     JwtConfig jwtConfig,
+                                     PersonAuthenticationManager authenticationManager) {
         this.passwordEncoder = passwordEncoder;
         this.personService = personService;
         this.secretKey = secretKey;
         this.jwtConfig = jwtConfig;
+        this.authenticationManager = authenticationManager;
     }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -43,9 +48,20 @@ public class ApplicationSecurityConfig  extends WebSecurityConfigurerAdapter {
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                .addFilter(new JwtUsernameAndPasswordAuthenticationFilter(authenticationManager(), jwtConfig, secretKey))
-                .addFilterAfter(new JwtTokenVerifier(secretKey, jwtConfig),JwtUsernameAndPasswordAuthenticationFilter.class)
-                .authorizeRequestsApplicationUserService()
+                .authorizeRequests()
+                .antMatchers(HttpMethod.OPTIONS ,"/**")
+                .permitAll()
+                .and()
+                .authorizeRequests()
+                .antMatchers("/auth/register")
+                .permitAll()
+                .and()
+
+                .addFilter(new JwtUsernameAndPasswordAuthenticationFilter(authenticationManager
+                        , jwtConfig
+                        , secretKey, passwordEncoder))
+                .addFilterAfter(new JwtTokenVerifier(secretKey, jwtConfig, personService),JwtUsernameAndPasswordAuthenticationFilter.class)
+                .authorizeRequests()
                 .anyRequest()
                 .authenticated();
     }
